@@ -16,4 +16,14 @@ spring:
 logging:
   level:
     org.springframework.security: DEBUG
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  info:
+    title: Student Management API
+    version: 1.0
+    description: Secure Student API with JWT and Swagger UI
 

@@ -31,8 +31,8 @@ class StudentControllerTest {
     @Tag("regression")
     void getAll_shouldReturnList() {
         List<Student> students = Arrays.asList(
-                new Student(1L, "Alice", "alice@example.com"),
-                new Student(2L, "Bob", "bob@example.com")
+                new Student(1L, "Alice", "alice@example.com", "English"),
+                new Student(2L, "Bob", "bob@example.com", "English")
         );
         when(service.getAllStudents()).thenReturn(students);
 
@@ -48,7 +48,7 @@ class StudentControllerTest {
         Student input = new Student();
         input.setName("Carol");
         input.setEmail("carol@example.com");
-        Student saved = new Student(3L, "Carol", "carol@example.com");
+        Student saved = new Student(3L, "Carol", "carol@example.com", "Mathematics");
         when(service.createStudent(input)).thenReturn(saved);
 
         Student result = controller.create(input);
@@ -60,7 +60,7 @@ class StudentControllerTest {
     @Test
     @DisplayName("Should get a student by id")
     void get_shouldReturnStudent() {
-        Student student = new Student(4L, "Dave", "dave@example.com");
+        Student student = new Student(4L, "Dave", "dave@example.com", "Science");
         when(service.getStudent(4L)).thenReturn(student);
 
         Student result = controller.get(4L);
@@ -75,7 +75,7 @@ class StudentControllerTest {
         Student update = new Student();
         update.setName("Eve");
         update.setEmail("eve@example.com");
-        Student updated = new Student(5L, "Eve", "eve@example.com");
+        Student updated = new Student(5L, "Eve", "eve@example.com", "Physics");
         when(service.updateStudent(5L, update)).thenReturn(updated);
 
         Student result = controller.update(5L, update);

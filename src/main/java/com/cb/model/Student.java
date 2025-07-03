@@ -1,5 +1,6 @@
 package com.cb.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,14 +13,19 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description = "Student entity representing a student record")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(description = "Unique identifier of the student", example = "1")
     private Long id;
-    private String name;
-    private String email;
-    private String course;
 
-    public Student(long l, String alice, String mail) {
-    }
+    @Schema(description = "Name of the student", example = "Alice Smith")
+    private String name;
+
+    @Schema(description = "Email address of the student", example = "alice@example.com")
+    private String email;
+
+    @Schema(description = "Course enrolled by the student", example = "Computer Science")
+    private String course;
 }
