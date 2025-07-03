@@ -58,7 +58,7 @@ class UserRepositoryTest {
         userRepository.save(u2);
 
         assertThat(userRepository.findAll())
-            .extracting(AppUser::getUsername)
-            .containsExactlyInAnyOrder("user1", "user2");
+                .extracting(AppUser::getUsername)
+                .containsExactlyInAnyOrder("user1", "user2");
     }
 }

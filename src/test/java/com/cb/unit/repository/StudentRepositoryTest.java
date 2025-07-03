@@ -59,7 +59,7 @@ class StudentRepositoryTest {
         studentRepository.save(s2);
 
         assertThat(studentRepository.findAll())
-            .extracting(Student::getEmail)
-            .containsExactlyInAnyOrder("carol@example.com", "dave@example.com");
+                .extracting(Student::getEmail)
+                .containsExactlyInAnyOrder("carol@example.com", "dave@example.com");
     }
 }

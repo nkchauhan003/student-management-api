@@ -5,6 +5,7 @@ import com.cb.model.Student;
 import com.cb.service.StudentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 
@@ -27,6 +28,7 @@ class StudentControllerTest {
 
     @Test
     @DisplayName("Should return all students")
+    @Tag("regression")
     void getAll_shouldReturnList() {
         List<Student> students = Arrays.asList(
                 new Student(1L, "Alice", "alice@example.com"),
