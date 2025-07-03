@@ -37,7 +37,7 @@ public class SecurityConfig {
 
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http, PasswordEncoder encoder, UserDetailsService uds) throws Exception {
-        AuthenticationManagerBuilder builder = http.getSharedObject(AuthenticationManagerBuilder.class);
+        var builder = http.getSharedObject(AuthenticationManagerBuilder.class);
         builder.userDetailsService(uds).passwordEncoder(encoder);
         return builder.build();
     }
