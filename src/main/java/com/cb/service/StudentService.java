@@ -31,7 +31,7 @@ public class StudentService {
 
     // Update an existing student
     public Student updateStudent(Long id, Student updated) {
-        Student existing = getStudent(id);
+        var existing = getStudent(id);
         existing.setName(updated.getName());
         existing.setEmail(updated.getEmail());
         existing.setCourse(updated.getCourse());

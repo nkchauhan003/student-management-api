@@ -1,6 +1,5 @@
 package com.cb.service;
 
-import com.cb.model.AppUser;
 import com.cb.repository.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,7 +19,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) {
-        AppUser user = repo.findByUsername(username)
+        var user = repo.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
         return new org.springframework.security.core.userdetails.User(
                 user.getUsername(), user.getPassword(),
